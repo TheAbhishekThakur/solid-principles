@@ -4,41 +4,28 @@ Subtypes must be substitutable for their base types without altering the correct
 
 ## Using Class
 
-// Bad Example: Violation of LSP because Penguin cannot fly.
+The Liskov principle dictates that substituting a parent class with its subclasses should not cause unexpected behaviors in the application.
 
-    class Bird {
-        fly() {
-            console.log("Flying");
-        }
-    }
+For instance, consider an Animal class with an eat() function:
 
-    class Sparrow extends Bird {}
+![alt text](image.png)
 
-    class Penguin extends Bird {
-        fly() {
-            throw new Error("Penguins can't fly!");
-        }
-    }
+Extending this class to Bird with a fly() function:
 
-// Good Example: Separate flying birds from non-flying birds.
+![alt text](image-1.png)
 
-    class Bird {}
+In this example, creating an object parrot from the Bird class and calling both eat() and fly() methods does not violate the Liskov principle. The parrot can perform both actions, aligning with expectations.
 
-    class FlyingBird extends Bird {
-        fly() {
-            console.log("Flying");
-        }
-    }
+However, extending Bird further to create an Ostrich class:
 
-    class Sparrow extends FlyingBird {}
+![alt text](image-2.png)
 
-    class Penguin extends Bird {} // No fly method needed
+This violates the Liskov principle because ostriches cannot fly, potentially causing unexpected behavior. The optimal approach is to extend the Ostrich class from the Animal class instead:
 
-    const sparrow = new Sparrow();
-    sparrow.fly(); // Works fine
+![alt text](image-3.png)
 
-    const penguin = new Penguin();
-    penguin.fly(); // No method to call
+By inheriting from the Animal class rather than Bird, the Ostrich class adheres to the Liskov Substitution Principle, ensuring expected behavior in the application.
+
 
 
 ## Using Function
@@ -60,3 +47,9 @@ Subtypes must be substitutable for their base types without altering the correct
 
     if (canFly(sparrow)) sparrow.fly();
     if (canFly(penguin)) penguin.fly(); // Safely does nothing
+
+
+
+<a href="https://medium.com/@adarshrai3011/mastering-solid-principles-in-javascript-a-comprehensive-guide-3d1ea4755e8a">Reference1</a>
+<a href="https://www.youtube.com/watch?v=_wqJYjd9NQw&list=PLXQpH_kZIxTWOcC8wvUHBMLSMQQ8LgcmU">Reference2</a>
+
