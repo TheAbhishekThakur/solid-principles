@@ -1,5 +1,7 @@
 # Liskov Substitution Principle
 
+`Note: Agar aapka parent class ko kahi pe use kar rhe ho or usko aap switch karte ho uske child class se to apka program correctly kaam karna chahiye, koi v alag behavior uske under nhi aana chahiye.`
+
 Subtypes must be substitutable for their base types without altering the correctness of the program. Essentially, derived classes should be able to replace their base classes.
 
 ## Using Class

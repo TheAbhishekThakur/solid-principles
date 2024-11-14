@@ -1,5 +1,7 @@
 # Open-Closed Principle
 
+`Note: Jo bhi aap function/class likhte ho usko firse existing code ko change nhi karna hai, Usko bs extend kar sakte h. In other words modification ke liye close hone chahiye but extension ke liye open hona chahiye.`
+
 The Open-Closed Principle asserts that functions, modules, and classes ought to be extendable without necessitating modifications. This principle holds paramount importance when implementing large-scale applications. It emphasizes the ability to easily introduce new features without altering existing code, preventing disruptive changes.
 
 Software entities should be open for extension but closed for modification. This means you should be able to add new functionality without changing existing code.

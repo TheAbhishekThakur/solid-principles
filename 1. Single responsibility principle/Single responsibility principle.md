@@ -1,5 +1,7 @@
 # Single Responsibility Principle
 
+`Note: Aapka class aaisa hone chahiye jisko change ka single reason hona chahiye. In other words Agar future mein kisi class ko change karna h to uska single reason/source hona chahiye`
+
 The Single Responsibility Principle (SRP) suggests that a class, module, or function should serve just one role or responsibility. In simpler terms, it should have a single reason to change.
 
 A class (or module) should have only one reason to change, meaning it should only have one job or responsibility.
